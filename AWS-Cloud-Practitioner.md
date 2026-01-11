@@ -43,3 +43,14 @@
   -  AWS Batch (a fully managed service for batch computing workloads)
   -  Amazon Lightsail (simplified web application hosting)
   -  AWS Outposts Family (for consistency on hybrid infrastructures)
+
+## Module 4: Going Global
+- How to choose a Region:
+  1. Compliance
+  2. Proximity
+  3. Feature avaibility
+  4. Pricing
+- Regions are made of various Availability Zones, having multi-AZs and Regions deployed provide redundancy.
+- We also have Edge locations which are independent from Regions, these run various services like AWS Outposts, Amazon CloudFront (content delivery network), AWS Global Accelerator or Amazon Route 53 (DNS).
+- To manage multiple resources across different Regions you use Infrastructure as Code (IaC) which work as blueprints for setups.
+- AWS CloudFormation is an IaC tool we use for this.
