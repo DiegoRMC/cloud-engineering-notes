@@ -54,3 +54,17 @@
 - We also have Edge locations which are independent from Regions, these run various services like AWS Outposts, Amazon CloudFront (content delivery network), AWS Global Accelerator or Amazon Route 53 (DNS).
 - To manage multiple resources across different Regions you use Infrastructure as Code (IaC) which work as blueprints for setups.
 - AWS CloudFormation is an IaC tool we use for this.
+
+## Module 5: Networking
+- The concept of subnets (slicing your network in different parts) and Virtual Private Networks (this way you can manage your subnets and choose what is accessible) get introduced.
+- To allow clients to access your VPC you need an internet gateway.
+- Ways to interact with VPCs:
+  1. AWS Client VPN (For remote workers)
+  2. AWS Site-to-Site VPN
+  3. AWS PrivateLink: Simplified private connection, acts as if the connection happened in your VPC.
+  4. AWS Direct Connect: Dedicated private connections for increased bandwidth
+- Network Access Control List (Network ACL) control traffic accessing and leaving a network.
+- Security groups take care of security per instance.
+- A difference between security groups and Networks ACLs is that the latter are stateless, meaning they have no kind of memory, security groups do.
+- A basic level structure includes subnets (private and public ones on different AZs), an internet gateway and routes.
+- We then learn more about AWS Route 53, Amazon CloudFront and AWS Global Accelerator, the last one provides faster routes for traffic to travel faster and more realibly.
