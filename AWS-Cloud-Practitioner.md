@@ -56,15 +56,54 @@
 - AWS CloudFormation is an IaC tool we use for this.
 
 ## Module 5: Networking
-- The concept of subnets (slicing your network in different parts) and Virtual Private Networks (this way you can manage your subnets and choose what is accessible) get introduced.
-- To allow clients to access your VPC you need an internet gateway.
-- Ways to interact with VPCs:
-  1. AWS Client VPN (For remote workers)
-  2. AWS Site-to-Site VPN
-  3. AWS PrivateLink: Simplified private connection, acts as if the connection happened in your VPC.
-  4. AWS Direct Connect: Dedicated private connections for increased bandwidth
-- Network Access Control List (Network ACL) control traffic accessing and leaving a network.
-- Security groups take care of security per instance.
-- A difference between security groups and Networks ACLs is that the latter are stateless, meaning they have no kind of memory, security groups do.
-- A basic level structure includes subnets (private and public ones on different AZs), an internet gateway and routes.
-- We then learn more about AWS Route 53, Amazon CloudFront and AWS Global Accelerator, the last one provides faster routes for traffic to travel faster and more realibly.
+- **VPC (Virtual Private Cloud):** An isolated section of the AWS Cloud where you can launch resources in a virtual network that you define.
+- **Subnets:** Slicing your network into different parts (public and private) to control access.
+- **Internet Gateway:** A component attached to your VPC to allow communication between your instances and the internet.
+- **Connectivity Options:**
+  - **AWS Client VPN:** Connects individual users (remote workers) to AWS or on-premises networks.
+  - **AWS Site-to-Site VPN:** Connects your corporate data center to your VPC.
+  - **AWS PrivateLink:** Simplified private connection between VPCs and services. Keeps traffic within the AWS network (doesn't traverse the public internet).
+  - **AWS Direct Connect:** A dedicated physical fiber connection from your premises to AWS (increased bandwidth and consistency).
+- **Network Access Control List (Network ACL):** Acts as a firewall for **subnets**. Controls traffic entering and leaving a network.
+  - *Key Characteristic:* **Stateless** (It has no memory; you must explicitly allow return traffic).
+- **Security Groups:** Acts as a firewall for **instances** (EC2).
+  - *Key Characteristic:* **Stateful** (It has memory; if you allow an incoming request, the response is automatically allowed).
+- **Basic Infrastructure:** A basic level structure includes subnets (private and public ones on different AZs), an internet gateway, and route tables.
+- **Content Delivery & Routing:**
+  - **Amazon Route 53:** AWS DNS service. Translates domain names into IP addresses.
+  - **Amazon CloudFront:** A Content Delivery Network (CDN) that delivers data/video globally with low latency.
+  - **AWS Global Accelerator:** Improves availability and performance using the AWS global network infrastructure.
+
+## Module 6: Storage
+- **Three types of data:**
+  - **Block Storage:** Data divided into pieces (blocks). Fast, low latency.
+  - **Object Storage:** Data + Unique ID + Metadata. Requires full rewrite to update. Organized using buckets. Best for files that don't change much ("write once, read many").
+  - **File Storage:** Best for shared access across multiple instances.
+- **Block Storage Options:**
+  - **EC2 Instance Store:** Ephemeral storage physically attached to the host.
+    - *Risk:* Data **does not persist** when the EC2 gets stopped or terminated. Good for buffers/cache.
+  - **Amazon Elastic Block Store (Amazon EBS):** Persistent block storage volumes for EC2.
+    - Data persists even if the instance stops.
+    - **Snapshots:** Incremental backups (saves only what has changed since the last snapshot).
+    - **Amazon Data Lifecycle Manager:** Automates the creation/retention of EBS snapshots.
+- **Object Storage Options:**
+  - **Amazon S3 (Simple Storage Service):**
+    - Virtually unlimited amount of data.
+    - Managed service.
+    - Highly reliable (11 9s of durability).
+    - **Security:** Private by default, supports bucket policies, time-limited URLs, audit logs, and encryption.
+    - **Use cases:** Content distribution, hosting static websites, backups, and media files.
+    - **Storage Classes:**
+      - **S3 Standard:** For frequently accessed data (dynamic websites, cloud apps).
+      - **S3 Standard-IA:** Infrequent access but rapid retrieval (backups).
+      - **S3 Glacier:** For archiving. Very low cost, retrieval times vary from minutes to hours.
+      - **S3 One Zone-IA:** Stores data in a single Availability Zone (cheaper, but risks data loss if that AZ fails).
+    - **Management:**
+      - **Lifecycle policies:** Move data between classes based on rules.
+      - **S3 Intelligent-Tiering:** Automatically moves data to the most cost-effective tier based on access patterns.
+- **File Storage Options:**
+  - **Amazon EFS (Elastic File System):** Scalable file storage for **Linux** EC2 instances. Region-wide and fully managed.
+  - **Amazon FSx:** File system for business applications. Use this if you need **Windows** File Server (SMB) or high-performance computing (Lustre).
+- **Additional Storage Solutions:**
+  - **AWS Storage Gateway:** Bridges on-premises environments with cloud storage. Types: S3 (File Gateway), Volume (Block Gateway), and Tape Gateway.
+  - **AWS Elastic Disaster Recovery (DRS):** Minimizes downtime and data loss with fast recovery of on-premises/cloud-based applications.
