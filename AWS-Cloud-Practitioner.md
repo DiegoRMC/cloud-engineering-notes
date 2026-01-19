@@ -107,3 +107,33 @@
 - **Additional Storage Solutions:**
   - **AWS Storage Gateway:** Bridges on-premises environments with cloud storage. Types: S3 (File Gateway), Volume (Block Gateway), and Tape Gateway.
   - **AWS Elastic Disaster Recovery (DRS):** Minimizes downtime and data loss with fast recovery of on-premises/cloud-based applications.
+
+#Module 7: Databases
+- Types of AWS Services based on the ownership of administrative tasks. (applied to databases, tho it works pretty much the same in other areas)
+  - Fully managed --> Fully managed AWS database services only require customers to be responsible for designing data structures and managing access controls.
+  - Managed --> AWS handles routine tasks like backups, patching, and hardware provisioning.
+  - Unmanaged --> With unmanaged databases, customers are responsible for installation, configuration, patching, maintenance tasks, database security, backups, high availability setup, and performance optimization.
+- **Relational databases** (RDBMS)
+  - Examples are MySQL, PostgreSQL, Microsoft SQL Server...
+  - AWS DMS (Database Migration Service) to migrate from on-premises.
+  - Amazon RDS is their relational database. (managed)
+  - Amazon Aurora (MySQL and PostgreSQL compatible - Up to 5x faster than standard MySQL)
+- **No SQL or non-relational databases**
+  - Better performance and flexibility in some situations.
+  - Amazon DynamoBD (fully managed serverless)
+- **Caching in relational databases**
+  - High traffic or complex queries performance affects performance, caching layers give a solution to this, storing frequently accessed data on quick access memory.
+  - Redis OSS, Valkey and Memcached are common caching tools.
+  - Amazon's is Elasticache.
+- **Other DB related services**
+  - For semi-structured databases you have Amazon DocumentDB (useful for content management or catalogs)
+  - Amazon Neptune is a graph database, to store and manage interconnected data, pattern recognition and fraud detection.
+  - Amazon Managed Blockchain.
+  - Accelerators (DAX)
+  - AWS Backup (works with hybrid environments too)
+
+
+
+
+
+
