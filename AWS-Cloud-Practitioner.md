@@ -165,6 +165,27 @@
   - Visualization
     - Amazon QuickSight (dashboards and reports)
     - Amazon OpenSearch Service (monitoring and analytics)
-    
 
-
+# Module 9: Security
+- Authentication: Verifying the identity of an user in a network.
+- Authorization: Granting authenticated users access rights and pemissions.
+  - Preventing unauthorized access:
+    - Root user (owner of the account, cannot be restricted) obviously needs strong security to access, token, password, MFA. Not recommended for general use, can mess up easily.
+    - AWS IAM: Create users, start with zero permissions and you give them permissions explicitly. IAM Groups and policies also exist. Roles are like users or groups but temporary.
+    - The principle of least privilege dictates that you should only give people and systems access to what they need and nothing else.
+    - AWS IAM Identity Center is the service for managing all of this.
+  - Protecting Networks an Applications:
+    - DDoS (Overwhelming a system with requests from multiple devices to deny a service, UDP Flood for example, where they send the answer to an UDP request to you, overwhelming you)
+    - Low-level brute force attacks are repelled by default by AWS's infreastructure (Regions, Security Groups, ELB) and AWS Shield Standard.
+    - Extra security services include AWS Shield (for most services=) and AWS WAF (for web)
+  - Data protection
+    - Encryption (you have the right key, you can access the data)
+      - **At rest:** Data is idle (S3 buckets already have it when an object is added, same with DynamoDB, instance store...)
+      - AWS Key Management Service (KMS) is the service used to encrypt and decrypt your data, disable keys, work with IAM...
+      - **In transist:** While data is being transported by using SSL and TLS certificates to establish encrypted network connections.
+      - AWS Certificate Manager (ACM) is the service used here.
+  - Detecting and Responding to Security Incidents
+    - Amazon Inspector (automatic security assesment, more like a security counselor)
+    - Amazon GuardDuty (uses AI to pretty much do the same)
+    - Amazon Detective (find the root cause for detected security issues)
+    - AWS Security Hub (groups, monitors and overall provides a clear view of your security parameters coming from distinct services)
