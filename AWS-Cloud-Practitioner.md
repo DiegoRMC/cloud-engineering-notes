@@ -108,7 +108,7 @@
   - **AWS Storage Gateway:** Bridges on-premises environments with cloud storage. Types: S3 (File Gateway), Volume (Block Gateway), and Tape Gateway.
   - **AWS Elastic Disaster Recovery (DRS):** Minimizes downtime and data loss with fast recovery of on-premises/cloud-based applications.
 
-#Module 7: Databases
+# Module 7: Databases
 - Types of AWS Services based on the ownership of administrative tasks. (applied to databases, tho it works pretty much the same in other areas)
   - Fully managed --> Fully managed AWS database services only require customers to be responsible for designing data structures and managing access controls.
   - Managed --> AWS handles routine tasks like backups, patching, and hardware provisioning.
@@ -132,8 +132,39 @@
   - Accelerators (DAX)
   - AWS Backup (works with hybrid environments too)
 
-
-
-
+# Module 8: AI/ML and Data Analytics
+- **AI:** A broad field focused on the development of intelligent computer systems capable of performing humanlike tasks.
+- **ML:** A type of AI for training machines to perform complex tasks without explicit instructions.
+- **Models** are trained on patterns and then used into new data.
+- **Amazon's services can be divided into:** AI Services (already trained), ML Services (you can build, train and deploy), ML Frameworks and Infrastructures (for more specific tasks)
+  - **Tier 1 (Pre-built AWS AI services) uses:**
+    - Language services (Amazon Comprehend, Amazon Polly), Amazon Transcribe, Amazon Translate)
+    - Computer vision and search services (Amazon Kendra, Amazon Rekognition, Amazon Textract)
+    - Conversational AI and personalization services (Amazon Lex, Amazon Personalize)
+  - **Tier 2: ML services**
+    - Amazon SageMaker AI is the service here, it offers a fully managed infrastructure where you can build, train, and deploy your own ML models.
+  - **Tier 3: ML frameworks and infrastructure**
+    - ML frameworks: It's a software library or tool that provides experienced ML practitioners with pre-built, optimized components for building machine learning models. Supports PyTorch, Apache M-X Net, and TensorFlow.
+    -  AWS ML infrastructure: ML-optimized Amazon Elastic Compute Cloud (Amazon EC2) instances, Amazon EMR, and Amazon Elastic Container Service (Amazon ECS), can support these custom solutions.
+- If we add Deep Learning to Mahcine Learning we get Generative AI, which goes beyond, being capable of creating new content and adapt to new tasks.
+  - Amazon SageMaker JumpStart (ML hub with FMs and pre-built ML solutions deployable with a few clicks)
+  - Amazon Bedrock (fully managed service for adapting and deploying FMs from Amazon and other leading AI companies)
+  - Amazon Q (interactive AI assistant that can be integrated with a company's information repositories) which is split into Business (for problem solving) and Developer (for coding)
+- ETL is the process where you **E**xtract data, **T**ransform it into usable formats and **L**oad it into a destination.
+- Data Pipelines automate this process.
+  - Data is initially stored in either data lakes (S3, flexible) or data warehouses (Redshift, more structured)
+  - Ingestion:
+    - In real time and from multiple datesets (Amazon Kinesis Data Streams)
+    - Amazon Data Firehose (near real time)
+  - Catalogation and processing
+    - AWS Glue and Glue Data Catalog (Catalog catalogs, just Glue analyzes)
+    - Amazon EMR (the alternative, for people who know waht they're doing)
+  - Data usage/analysis
+    - Amazon Athena (fully managed serverless service)
+    - Amazon Redshift (fully managed but suited for more complex and higher loads)
+  - Visualization
+    - Amazon QuickSight (dashboards and reports)
+    - Amazon OpenSearch Service (monitoring and analytics)
+    
 
 
