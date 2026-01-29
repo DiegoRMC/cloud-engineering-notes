@@ -189,3 +189,44 @@
     - Amazon GuardDuty (uses AI to pretty much do the same)
     - Amazon Detective (find the root cause for detected security issues)
     - AWS Security Hub (groups, monitors and overall provides a clear view of your security parameters coming from distinct services)
+
+# Module 10: Monitoring, Compliance and Governance in the AWS Cloud
+- General progression when it comes to it: Secure --> Monitor --> Audit --> Compliance
+- Monitoring: Observing systems, collecting metrics and then using data to make decisions
+- Amazon CloudWatch is the centralized service that takes care of monitoring
+    - Metrics: Variables tied to your resources
+    - CloudWatch alarms let you set thresholds tied to metrics and send notifications or make changes to resources when met.
+    - A dashboard provides a quick view of your aplications, infrastructure and services
+    - For going further (more specific or older data) you check the logs
+- AWS CloudTrail is an audit log of the AWS API calls.
+- Compliance in the EU responds to GDPR
+- AWS pretty much does it for you, you just have to be aware of which compliances apply to you and make some research. With AWS Artifact you can check compliance reports.
+- AWS Config helps you assess, audit and evaluate your resources so your solutions are in compliance with internal policies and regulations.
+- AWS Audit Manager is a service that assesses your policies, manages reviews and build reports. (basically collects your data for evidence against inspections)
+- AWS Organizations (account management service as you grow and scale)
+- Governance:
+  - Governance is a framework to manage your IT goals with policies, processess and structures to ensure adherence
+  - AWS Control Tower: A service you can use to set up and govern a secure, compliant, multi-account AWS environment based on best practices
+  - AWS Service Catalog: A service you can use to create, share, and organize AWS services and resources from a curated catalog that you define
+  - AWS License Manager: A service that helps you manage your software licenses and fine-tune licensing costs
+- AWS Health Dashboard (not for actual health, but for service events, troubleshooting...
+- AWS Trusted Advisor (name pretty much says it)  works for cost optimization, security, performance...
+- IAM Access Analyzer (like Trusted Advisor but for IAM
+
+# Module 11: Pricing and Support
+- Pricing
+  - Pay as you go (you only pay for resources you consume)
+  - Save whe nyou commit (classic, subscribe for a year rather than monthly and get a discount)
+  - Pay less by using more (volume base discounts)
+  - Main pricing drivers: Compute, storage and data transfer.
+  - Services that help with billing include: AWS Organizations, AWS Billing and Cost Management Console Home, AWS Budgets, AWS Cost Explorer and AWS Pricing Calculator.
+- Support:
+  - Tiers:
+    - Basic Support: automatic, no cost, documentation, forums, core Trusted advisor...
+    - Developer Support: also direct email, for experimenting or getting started
+    - Business Support: Phone access, 4 to 1h reponse depending on case
+    - Enterpirse Support: Reduced response time, account managers, Technical Account Managers (TAMs)...
+  - AWS Marketplace and AWS Partner Network (you can basically  buy software from individual vendors)
+- Cost Optimization:
+  - Rightsizing: Matching the needs of your workload
+  - Lifecycling policies and compressing for storage...
