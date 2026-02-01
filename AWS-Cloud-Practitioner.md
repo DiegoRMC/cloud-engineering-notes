@@ -255,3 +255,18 @@
     - AWS Transfer Family (fully managed and simple)
     - Direct Connect (for VPCs) also works
   - if you want offline data transfers you can use Snowball Edge Storage Optimized devices.
+
+# Module 13: Well-Architected Solutions
+- **AWS Well-Architected Framework** (helps evaluate the quality of your designs ensuring they align with best practices):
+  - 6 Pillars:
+    - Operational excellence (automation, event response...)
+    - Security 
+    - Reliability (recovery planning and ability to withstand failures)
+    - Performance efficiency (efficient use of resources, making informed decisions)
+    - Cost optimization
+    - Sustainability
+- Some other AWS services:
+  - Development services: AWS CodeBuild, AWS CodePipeline, AWS X-Ray, AWS AppSync, AWS Amplify.
+  - Business services: Amazon Connect, Amazon Simple Email Service.
+  - End-user computing services: Amazon AppStream 2.0, Amazon Workspaces, Amazon WorkSpaces Web.
+  - IoT services: AWS IoT Core
