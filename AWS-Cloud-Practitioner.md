@@ -230,3 +230,28 @@
 - Cost Optimization:
   - Rightsizing: Matching the needs of your workload
   - Lifecycling policies and compressing for storage...
+
+# Module 12: Migrating to the AWS Cloud
+- The phases of migration are: Assess, Mobilize, Migrate and modernize.
+- Readiness, a lot of stakeholders and variables take action here. (AWS CAF is a framework that help prepare for migrations)
+- There are 7 possible migration strategies depending on what you're moving:
+  - Relocate (you simply change hosts, good if your applications are VMs or containers)
+  - Rehost (change host without changing anything in your applications, lift and shift)
+  - Replatform (same as rehost but you do make a few changes to your applications, lift, tinker and shift)
+  - Refactor (this is not just tinkering a few things in your applications, this is actually changing them to sometimes work completely different)
+  - Repurchase (this means changing software, for example you go from SQL Server with an AWS cloud based one)
+  - Retain (you keep critical applications on-premises)
+  - Retiring (you remove applications that are no longer needed)
+- Migration services and tools:
+  - AWS Application Discovery (literally what the name says, provides an snapshot of what you have, checking dependencies, inventory, map connections...)
+  - AWS Application Migration Service (what actually makes the migration, some benefits include you can mantain normal bussiness while moving)
+  - Migration Evaluator (helps understand potential savings, bugeting...)
+  - AWS Migration Hub (unified view of all tasks and progress tracking)
+- Database migrations:
+  - AWS Database Migration Service (Works on SQL, non-SQL, warehouses...), works by replication and has high availavility even during the process.
+  - If the migration includes changing the database engine you need the schema and use AWS Schema Conversion Tool, anything that's not automatically migrated needs to be done manually.
+  - Online data transfers (from or to the cloud):
+    - AWS DataSync (simply helps with moving and takes care of some extras like security)
+    - AWS Transfer Family (fully managed and simple)
+    - Direct Connect (for VPCs) also works
+  - if you want offline data transfers you can use Snowball Edge Storage Optimized devices.
